@@ -1,8 +1,8 @@
-import 'package:bloclogin/bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:bloclogin/blocs/authentication_bloc/bloc.dart';
 
 class HomePage extends StatelessWidget {
   @override

@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../user_repository.dart';
-import './bloc.dart';
+import '../../user_repository.dart';
+import 'bloc.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository userRepository;

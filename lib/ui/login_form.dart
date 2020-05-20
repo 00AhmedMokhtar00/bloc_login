@@ -35,29 +35,34 @@ class _LoginFormState extends State<LoginForm> {
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
-          return Form(
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: InputDecoration(labelText: 'username'),
-                  controller: _usernameController,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(labelText: 'password'),
-                  controller: _passwordController,
-                  obscureText: true,
-                ),
-                RaisedButton(
-                  onPressed:
-                  state is! LoginLoading ? _onLoginButtonPressed : null,
-                  child: Text('Login'),
-                ),
-                Container(
-                  child: state is LoginLoading
-                      ? CircularProgressIndicator()
-                      : null,
-                ),
-              ],
+          return Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Form(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'username'),
+                    controller: _usernameController,
+                  ),
+                  SizedBox(height: 5.0),
+                  TextFormField(
+                    decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'password'),
+                    controller: _passwordController,
+                    obscureText: true,
+                  ),
+                  RaisedButton(
+                    onPressed:
+                    state is! LoginLoading ? _onLoginButtonPressed : null,
+                    child: Text('Login'),
+                  ),
+                  Container(
+                    child: state is LoginLoading
+                        ? CircularProgressIndicator()
+                        : null,
+                  ),
+                ],
+              ),
             ),
           );
         },
